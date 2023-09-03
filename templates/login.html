@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fred's YouTube Downloader - Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+
+<body>
+    <main class="main-content">
+        <div class="container">
+            <div class="text-center mb-4">
+                <img class="img-fluid d-block mx-auto" src="{{ url_for('static', filename='images/azure-icon.svg') }}" alt="Azure Logo" width="192" height="192" />
+                <h1 class="display-6 fw-bold text-primary">Welcome to Fred's YouTube Downloader</h1>
+                <p class="fs-5">
+                    Please login to continue. This is just to ensure you are not a bot
+                </p>
+                <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg px-4 gap-3">Login with Google</a>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

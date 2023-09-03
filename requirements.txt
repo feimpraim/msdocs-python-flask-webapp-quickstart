@@ -1,2 +1,6 @@
 Flask==2.0.2
 gunicorn
+pytube
+certifi
+moviepy
+Flask-OAuthlib

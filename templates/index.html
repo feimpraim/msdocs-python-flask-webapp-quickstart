@@ -1,30 +1,49 @@
 <!doctype html>
+<html lang="en">
+
 <head>
-    <title>Hello Azure - Python Quickstart</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fred's YouTube Video Audio Downloader</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <style>
+        .main-content {
+            padding: 4rem 0;
+        }
+        
+        .input-field {
+            max-width: 100%;
+        }
+    </style>
 </head>
-<html>
-   <body>
-     <main>
-        <div class="px-4 py-3 my-2 text-center">
-            <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='images/azure-icon.svg') }}" alt="Azure Logo" width="192" height="192"/>
-            <!-- <img  src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
-            <h1 class="display-6 fw-bold text-primary">Welcome to Azure</h1>            
-          </div>
-        <form method="post" action="{{url_for('hello')}}">
-            <div class="col-md-6 mx-auto text-center">
-                <label for="name" class="form-label fw-bold fs-5">Could you please tell me your name?</label>
 
-                <!-- <p class="lead mb-2">Could you please tell me your name?</p> -->
-                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center align-items-center my-1">
-                    <input type="text" class="form-control" id="name" name="name" style="max-width: 256px;">
-                  </div>            
-                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center my-2">
-                  <button type="submit" class="btn btn-primary btn-lg px-4 gap-3">Say Hello</button>
-                </div>            
+<body>
+    <main class="main-content">
+        <div class="container">
+            <div class="text-center mb-4">
+                <img class="img-fluid d-block mx-auto" src="{{ url_for('static', filename='images/azure-icon.svg') }}" alt="Azure Logo" width="192" height="192" />
+                <h1 class="display-6 fw-bold text-primary">Fred's YouTube Video and Audio downloader</h1>
             </div>
-        </form>
-     </main>      
-   </body>
+            <form method="post" action="{{url_for('hello')}}">
+                <div class="row">
+                    <div class="col-lg-6 mx-auto">
+                        <div class="mb-3 text-center">
+                            <label for="name" class="form-label fw-bold fs-5">Provide URL you would like to convert</label>
+                            <input type="text" class="form-control input-field" id="name" name="name">
+                        </div>
+                        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                            <button type="submit" class="btn btn-primary btn-lg px-4 gap-3">Convert</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="text-center mt-4">
+                <p class="fs-5">Logged in as: {{ session['user_email'] }}</p>
+                <a href="{{ url_for('logout') }}" class="btn btn-warning">Logout from Google</a>
+            </div>
+        </div>
+    </main>
+</body>
+
 </html>

@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/2fa1771c-889e-44af-96c2-48ad38845554/resourceGroups/FredImpYouTubeDownloader/providers/Microsoft.Web/sites/FredImpYouTubeDownloader",
+    "appService.deploySubpath": "."
+}
